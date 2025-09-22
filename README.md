@@ -22,7 +22,7 @@ More informations about Apertus AI can be found on their [website](https://www.s
 You can install the package via Composer:
 
 ```bash
-composer require mmorand/apertus
+composer require mmorand/laravel-apertus
 ```
 
 You can publish the config file with:
