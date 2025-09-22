@@ -1,0 +1,76 @@
+{
+  "name": "mmorand/laravel-apertus",
+  "description": "Laravel package for the Swiss made Apertus LLM",
+  "keywords": [
+    "apertus",
+    "laravel",
+    "ai",
+    "php",
+    "api",
+    "llm",
+    "chat"
+  ],
+  "homepage": "https://github.com/mmorand/laravel-apertus",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Mathieu Morand",
+      "email": "mathieu.morand.ch@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^8.3",
+    "saloonphp/laravel-plugin": "^v3.5",
+    "spatie/laravel-data": "^3|^4",
+    "spatie/laravel-package-tools": "^1.16"
+  },
+  "require-dev": {
+    "laravel/pint": "^1.0",
+    "nunomaduro/collision": "^7|^8",
+    "larastan/larastan": "^2.0.1",
+    "orchestra/testbench": "^8.0|^9.0",
+    "pestphp/pest": "^2.20",
+    "pestphp/pest-plugin-arch": "^2.0",
+    "pestphp/pest-plugin-laravel": "^2.0",
+    "phpstan/extension-installer": "^1.1",
+    "phpstan/phpstan-deprecation-rules": "^1.0",
+    "phpstan/phpstan-phpunit": "^1.0",
+    "roave/security-advisories": "dev-latest"
+  },
+  "autoload": {
+    "psr-4": {
+      "Mmorand\\Apertus\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Mmorand\\Apertus\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "analyse": "vendor/bin/phpstan analyse --memory-limit=1G",
+    "test": "vendor/bin/pest",
+    "test-coverage": "XDEBUG_MODE=coverage vendor/bin/pest --coverage",
+    "format": "vendor/bin/pint"
+  },
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": {
+      "pestphp/pest-plugin": true,
+      "phpstan/extension-installer": true
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Mmorand\\Apertus\\ApertusServiceProvider"
+      ],
+      "aliases": {
+        "Apertus": "Mmorand\\Apertus\\Facades\\Apertus"
+      }
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
