@@ -18,7 +18,7 @@ class ApertusServiceProvider extends PackageServiceProvider
 
     public function packageBooted(): void
     {
-        $this->app->bind(Apertus::class, function () {
+        $this->app->singleton(Apertus::class, function () {
             return new Apertus(
                 apiKey: config('apertus.api_key'),
                 baseUrl: config('apertus.base_url'),
