@@ -27,7 +27,10 @@ class CreateChatCompletion extends BaseRequest implements HasBody
     /** @return array<string, mixed> */
     protected function defaultBody(): array
     {
-        return array_filter($this->chatCompletionRequest->toArray());
+        return array_filter(
+            $this->chatCompletionRequest->toArray(),
+            static fn ($v) => $v !== null
+        );
     }
 
     /** @throws JsonException */
